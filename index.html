@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="js/script.js"></script>
+  </head>
+  <body>
+    <form action="" id="add-project-form">
+      <div class="overlay">
+        <div>
+          <p class="error display-projectError"></p>
+          <label for="project-name">Project name</label>
+          <input type="text" id="project-name" />
+          <div class="form-buttons-con">
+            <input type="submit" /><button
+              class="close-form close-project-form"
+            >
+              close
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <form action="" id="add-todo">
+      <div class="overlay">
+        <div>
+          <p class="error display-error"></p>
+          <div>
+            <label for="todo-title">Title</label>
+            <input type="text" id="todo-title" />
+          </div>
+          <div>
+            <label for="todo-description">Description</label>
+            <textarea
+              name="todo-description"
+              id="todo-description"
+              cols="50"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="todo-date">Due Date</label>
+            <input type="date" id="todo-date" />
+          </div>
+
+          <div>
+            <label for="todo-priority">Priority</label>
+            <select name="" id="todo-priority">
+              <option disabled selected>------</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+          <div class="form-buttons-con">
+            <input type="submit" /><button class="close-form close-todo-form">
+              close
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="container">
+      <nav class="nav">
+        <h1 class="nav-heading">Welcome!!!</h1>
+        <ul>
+          <li class="nav-item today-todo"><a href="#">Today</a></li>
+          <li class="nav-item new-project">
+            <a href="#">Add New Project</a>
+          </li>
+        </ul>
+
+        <p class="project-heading">My Projects</p>
+        <div class="projects">
+          <!-- <div class="project-item">
+            <div class="project-item-text">Customer feedback system</div>
+            <span>&times;</span>
+          </div>
+
+          <div class="project-item">
+            <div class="project-item-text">Web dev</div>
+            <span>&times;</span>
+          </div> -->
+        </div>
+      </nav>
+
+      <div class="display">
+        <header class="heading">
+          <h2 class="heading-title">Your To Do List</h2>
+          <div class="heading-date"></div>
+          <!-- <div class="button-hide">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div> -->
+        </header>
+
+        <div class="display-todo">
+          <!-- <div class="empty-project">
+            <p>There is NO</p>
+            <p>TODO.</p>
+            <p>ADD SOME</p>
+          </div> -->
+          <!-- <div class="todo-item">
+            <h3 class="todo todo-title">Todo title</h3>
+            <p class="todo todo-desc">todo descript Ipsa, adipisci?</p>
+            <p class="todo todo-date">saturday, 13th october, 2024</p>
+            <p class="todo todo-priority">medium</p>
+            <div class="todo todo-buttons">
+              <button class="delete-todo">Remove</button>
+              <button class="mark-done">Done</button>
+            </div>
+            <div class="project-name"><i>Project Name</i>#</div>
+          </div>
+
+          <div class="todo-item">
+            <h3 class="todo todo-title">Todo title</h3>
+            <p class="todo todo-desc">
+              todo description Lorem ipsum dolor sit amet
+            </p>
+            <p class="todo todo-date">saturday, 13th october, 2024</p>
+            <p class="todo todo-priority">medium</p>
+            <div class="todo todo-buttons">
+              <button class="delete-todo">Remove</button>
+              <button class="mark-done">Done</button>
+            </div>
+            <div class="project-name"><i>Project Name</i>#</div>
+          </div> -->
+        </div>
+      </div>
+      <p class="add-todo">+</p>
+    </div>
+  </body>
+</html>
