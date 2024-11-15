@@ -334,7 +334,7 @@ textarea {
   margin-bottom: 0.2rem;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 970px) {
   .button-hide {
     display: block;
     z-index: 3;
