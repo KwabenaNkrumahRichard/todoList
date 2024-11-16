@@ -57,6 +57,7 @@ const deleteProject = function (e) {
   todoListContainer.textContent = "";
 
   removeActiveClass();
+  setLocalstorage();
 };
 
 /////////////////////////////////////////////////////////////
@@ -102,6 +103,8 @@ const addTodo = function (e) {
   todoPriority.value = "------";
 
   formDisableOrAble(addNewTodoForm, 0, "none");
+
+  setLocalstorage();
 };
 
 //////////////////////////////////////////////////////////////
@@ -117,6 +120,7 @@ const deleteTodo = function (e) {
   let someExist = todoList.some((item) => item.projectName === projectName);
 
   if (!someExist) ifProjectIsEmpty(someExist);
+  setLocalstorage();
 };
 
 /////////////////////////////////////////////////////
@@ -132,6 +136,7 @@ const markDone = function (e) {
   todoList.push(doneItem);
 
   addTodoCard(projectName);
+  setLocalstorage();
 };
 
 ///////////////////////////////////////////////////////////////
@@ -237,6 +242,8 @@ const addProject = function (e) {
   errorMessageProject.textContent = "";
 
   ifProjectIsEmpty();
+
+  setLocalstorage();
 };
 
 //////////////////////////////////////////////////////////////
@@ -284,8 +291,8 @@ let setLocalstorage = function () {
 
 /////////////////////////////////////////////////////////////////
 let getLocalStorage = function () {
-  let todoListData = JSON.parse(localStorage.getItem("todoList"));
-  let projectData = JSON.parse(localStorage.getItem("projects"));
+  let todoListData = [...new Set(JSON.parse(localStorage.getItem("todoList")))];
+  let projectData = [...new Set(JSON.parse(localStorage.getItem("projects")))];
 
   if (!projectData || projectData.length === 0) return;
 
@@ -314,8 +321,6 @@ let clearLocalStorage = function () {
 ///////////////////////////////////////////////////////
 /////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
-
-window.addEventListener("beforeunload", setLocalstorage);
 
 todoListContainer.addEventListener("click", function (e) {
   if (!e.target.closest(".todo-buttons")) return;
