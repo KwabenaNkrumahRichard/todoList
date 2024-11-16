@@ -153,10 +153,10 @@ let ifProjectIsEmpty = function (arrayOfTodo, todayClicked = false) {
                                               <p>There is NO</p>
                                               <p>${
                                                 !todayClicked
-                                                  ? "TODO"
-                                                  : "TODO FOR TODAY"
+                                                  ? "Schedule"
+                                                  : "Schedule for today"
                                               }.</p>
-                                              <p>ADD SOME</p>
+                                              <p>Add some</p>
                                             </div>`;
 };
 

@@ -297,7 +297,7 @@ textarea {
 .empty-project {
   width: 100%;
   height: 100%;
-  text-transform: uppercase;
+  /* text-transform: capitalize; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -336,6 +336,9 @@ textarea {
 }
 
 @media (max-width: 970px) {
+  html {
+    font-size: 30%;
+  }
   .button-hide {
     display: block;
     z-index: 3;
@@ -346,7 +349,7 @@ textarea {
   } */
   .heading-date,
   .heading-title {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     padding-right: 1rem;
   }
 
