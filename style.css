@@ -140,7 +140,6 @@ ul {
   padding: 1rem;
   background-color: var(--color-primary);
   min-width: 10%;
-  max-width: 40%;
   border-radius: 0.5rem;
 }
 .todo:not(:last-child) {
@@ -335,9 +334,18 @@ textarea {
   margin-bottom: 0.2rem;
 }
 
-@media (max-width: 970px) {
+@media (max-width: 750px) {
   html {
-    font-size: 30%;
+    font-size: 25%;
+  }
+  body {
+    padding-left: 2rem;
+  }
+  .nav {
+    width: 15vw;
+  }
+  .display {
+    width: 85vw;
   }
   .button-hide {
     display: block;
@@ -359,7 +367,7 @@ textarea {
   }
 
   .todo-item {
-    min-width: 24.9rem;
+    width: 90%;
   }
   .overlay > div {
     width: 32rem;
