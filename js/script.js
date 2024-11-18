@@ -61,7 +61,7 @@ const deleteProject = function (e) {
 };
 
 /////////////////////////////////////////////////////////////
-const addTodo = function (e) {
+const submittingTodoForm = function (e) {
   e.preventDefault();
 
   if (!projectName)
@@ -95,7 +95,6 @@ const addTodo = function (e) {
   );
 
   todoList.push(newTodo);
-  calcDaysLeft();
 
   addTodoCard(projectName);
 
@@ -164,6 +163,8 @@ let ifProjectIsEmpty = function (arrayOfTodo, todayClicked = false) {
 let HTMLtodocard = function (arrayOfTodolist, todayClicked = false) {
   todoListContainer.textContent = "";
 
+  calcDaysLeft();
+
   const doneOrnot = function (item) {
     return item.done
       ? 'style="opacity:0.5; text-decoration: line-through"'
@@ -217,7 +218,7 @@ let projectHTML = function (name) {
   projectContainer.insertAdjacentHTML("afterbegin", html);
 };
 ////////////////////////////////////////////////////////////////
-const addProject = function (e) {
+const submittingProjectForm = function (e) {
   e.preventDefault();
   if (!inputProjectName.value)
     return (errorMessageProject.textContent =
@@ -257,15 +258,15 @@ const calcDaysLeft = function () {
   todoList.forEach((item) => {
     let todoDate = new Date(item.dueDate);
     let daysLeft = Math.round((todoDate - now) / (1000 * 60 * 60 * 24));
-    if (daysLeft === -1) item.daysLeft = "Today";
-    if (daysLeft === 0) item.daysLeft = "Tomorrow";
-    if (daysLeft === 1) item.daysLeft = "2 days Left";
-    if (daysLeft === 2) item.daysLeft = "3 days Left";
-    if (daysLeft === 3) item.daysLeft = "4 days Left";
-    if (daysLeft === 4) item.daysLeft = "5 days Left";
-    if (daysLeft === 5) item.daysLeft = "6 days Left";
-    if (daysLeft === 6) item.daysLeft = "7 days Left";
-    if (daysLeft >= 7) item.daysLeft = item.dueDate;
+    if (daysLeft === 0) item.daysLeft = "Today";
+    if (daysLeft === 1) item.daysLeft = "Tomorrow";
+    if (daysLeft === 2) item.daysLeft = "2 days Left";
+    if (daysLeft === 3) item.daysLeft = "3 days Left";
+    if (daysLeft === 4) item.daysLeft = "4 days Left";
+    if (daysLeft === 5) item.daysLeft = "5 days Left";
+    if (daysLeft === 6) item.daysLeft = "6 days Left";
+    if (daysLeft === 7) item.daysLeft = "7 days Left";
+    if (daysLeft >= 8) item.daysLeft = item.dueDate;
 
     if (daysLeft < -1) {
       item.done = true;
@@ -274,6 +275,7 @@ const calcDaysLeft = function () {
   });
 };
 
+calcDaysLeft();
 //////////////////////////////////////////////////////////////
 function todayList() {
   let todayTodo = todoList.filter((item) => item.daysLeft === "Today");
@@ -357,7 +359,7 @@ addNewProjectBtn.addEventListener("click", function () {
 // Adding event listener to new project form
 addNewProjectForm.addEventListener(
   "submit",
-  addProject.bind(addNewProjectForm)
+  submittingProjectForm.bind(addNewProjectForm)
 );
 
 // Adding event listener to new Todo button
@@ -368,7 +370,10 @@ addNewTodoBtn.addEventListener("click", function () {
 });
 
 // Adding event listener to new todo form
-addNewTodoForm.addEventListener("submit", addTodo.bind(addNewTodoForm));
+addNewTodoForm.addEventListener(
+  "submit",
+  submittingTodoForm.bind(addNewTodoForm)
+);
 
 // Adding event listener to project container
 projectContainer.addEventListener("click", function (e) {

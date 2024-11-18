@@ -321,36 +321,19 @@ textarea {
   gap: 2rem;
 }
 
-.button-hide {
-  position: absolute;
-  right: 1.5rem;
-  top: 3rem;
-}
-
-.button-hide div {
-  width: 100%;
-  height: 0.3rem;
-  background-color: black;
-  margin-bottom: 0.2rem;
-}
-
 @media (max-width: 750px) {
   html {
-    font-size: 25%;
+    font-size: 30%;
   }
   body {
     padding-left: 2rem;
   }
-  .nav {
+  /* .nav {
     width: 15vw;
-  }
-  .display {
+  } */
+  /* .display {
     width: 85vw;
-  }
-  .button-hide {
-    display: block;
-    z-index: 3;
-  }
+  } */
 
   /* .nav {
     display: none;
@@ -369,7 +352,7 @@ textarea {
   .todo-item {
     width: 90%;
   }
-  .overlay > div {
+  /* .overlay > div {
     width: 32rem;
   }
 
@@ -377,26 +360,26 @@ textarea {
   select,
   textarea {
     width: 27rem;
-  }
-  .form-buttons-con {
+  } */
+  /* .form-buttons-con {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
 
   .container .nav {
-    width: 60%;
+    width: 50%;
   }
-  .nav .project-item {
+  /* .nav .project-item {
     line-height: 3.2rem;
-  }
+  } */
 
-  .add-todo {
+  /* .add-todo {
     right: 2rem;
     bottom: 2rem;
-  }
+  } */
 
-  .overlay .error {
+  /* .overlay .error {
     font-size: var(--font-size-secondary);
-  }
+  } */
 }
