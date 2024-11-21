@@ -257,7 +257,8 @@ const formDisableOrAble = function (form, opacity, display) {
 const calcDaysLeft = function () {
   todoList.forEach((item) => {
     let todoDate = new Date(item.dueDate);
-    let daysLeft = Math.round((todoDate - now) / (1000 * 60 * 60 * 24));
+    let nowCalc = new Date(minDate());
+    let daysLeft = Math.round((todoDate - nowCalc) / (1000 * 60 * 60 * 24));
     if (daysLeft === 0) item.daysLeft = "Today";
     if (daysLeft === 1) item.daysLeft = "Tomorrow";
     if (daysLeft === 2) item.daysLeft = "2 days Left";
